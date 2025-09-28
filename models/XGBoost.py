@@ -15,24 +15,24 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
 
 # Load data
-train_df = pd.read_csv('train.csv')
-test_df = pd.read_csv('test.csv')
+train_df = pd.read_csv('dataset/train.csv')
+test_df = pd.read_csv('dataset/test.csv')
 
 print("Train shape:", train_df.shape)
 print("Test shape:", test_df.shape)
 
 # Convert datetime and extract time features
-train_df['time'] = pd.to_datetime(train_df['time'])
-test_df['time'] = pd.to_datetime(test_df['time'])
+train_df['date'] = pd.to_datetime(train_df['date'])
+test_df['date'] = pd.to_datetime(test_df['date'])
 
 for df in [train_df, test_df]:
-    df['hour'] = df['time'].dt.hour
-    df['day_of_week'] = df['time'].dt.dayofweek
-    df['month'] = df['time'].dt.month
-    df['day_of_year'] = df['time'].dt.dayofyear
+    df['hour'] = df['date'].dt.hour
+    df['day_of_week'] = df['date'].dt.dayofweek
+    df['month'] = df['date'].dt.month
+    df['day_of_year'] = df['date'].dt.dayofyear
 
-train_df = train_df.drop(columns=['time'])
-test_df = test_df.drop(columns=['time'])
+train_df = train_df.drop(columns=['date'])
+test_df = test_df.drop(columns=['date'])
 
 # Define features and target
 target = 'consumption'
@@ -92,13 +92,3 @@ mae = mean_absolute_error(y_test, preds)
 
 print(f"Mean Squared Error (MSE): {mse:.4f}")
 print(f"Mean Absolute Error (MAE): {mae:.4f}")
-
-# Optional: Remove if not needed
-xgb.plot_importance(xgb_model)
-plt.show()
-
-# Save predictions
-results = pd.DataFrame({'Actual': y_test, 'Predicted': preds})
-results.to_csv('predictions.csv', index=False)
-print("Predictions saved to 'predictions.csv'")
-
