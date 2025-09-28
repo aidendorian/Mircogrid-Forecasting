@@ -1,12 +1,12 @@
 import torch
 import torch.nn as nn
-from layers.Transformer_EncDec import Decoder, DecoderLayer, Encoder, EncoderLayer, ConvLayer
-from layers.SelfAttention_Family import ProbAttention, AttentionLayer
-from layers.Embed import DataEmbedding
+from utils.Transformer_EncDec import Decoder, DecoderLayer, Encoder, EncoderLayer, ConvLayer
+from utils.SelfAttention_Family import ProbAttention, AttentionLayer
+from utils.Embed import DataEmbedding
 import numpy as np
 
 from math import sqrt
-from utils.masking import TriangularCausalMask, ProbMask
+from utils.masking import TriangularCausalMask
 
 class FullAttention(nn.Module):
     def __init__(self, mask_flag=True, factor=5, scale=None, attention_dropout=0.1, output_attention=False):
