@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
-from layers.Embed import DataEmbedding_wo_pos
-from layers.AutoCorrelation import AutoCorrelation, AutoCorrelationLayer
-from layers.Autoformer_EncDec import Encoder, Decoder, EncoderLayer, DecoderLayer, my_Layernorm, series_decomp
+from utils.Embed import DataEmbedding_wo_pos
+from utils.AutoCorrelation import AutoCorrelation, AutoCorrelationLayer
+from utils.Autoformer_EncDec import Encoder, Decoder, EncoderLayer, DecoderLayer, my_Layernorm, series_decomp
 
 
 class Model(nn.Module):

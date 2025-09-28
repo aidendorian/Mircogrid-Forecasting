@@ -1,0 +1,15 @@
+energy_test_Autoformer_sl96_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dttest_0  
+mse:0.5566102862358093, mae:0.4932497441768646
+
+energy_test_Informer_sl96_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dttest_0  
+mse:1.1199835538864136, mae:0.7068512439727783
+
+energy_test_Reformer_sl96_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dttest_0  
+mse:1.115579605102539, mae:0.6969581246376038
+
+energy_forecast_Reformer_sl96_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dttest_0  
+mse:1.1158616542816162, mae:0.6972785592079163
+
+energy_forecast_Transformer_sl96_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dttest_0  
+mse:1.1063847541809082, mae:0.6946008205413818
+

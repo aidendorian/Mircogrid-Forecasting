@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
-from layers.Transformer_EncDec import Encoder, EncoderLayer
-from layers.SelfAttention_Family import ReformerLayer
-from layers.Embed import DataEmbedding
+from utils.Transformer_EncDec import Encoder, EncoderLayer
+from utils.SelfAttention_Family import ReformerLayer
+from utils.Embed import DataEmbedding
 
 
 class Model(nn.Module):
